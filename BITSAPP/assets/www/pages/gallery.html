@@ -1,0 +1,164 @@
+<div data-role="page">
+	<script>
+		$(".photos").addClass('gallery-header-color');
+		$(".gallery-files").hide();
+		$(".gallery-video").hide();
+		var video = document.getElementById("video");
+		var video1 = document.getElementById("video1");
+		var video2 = document.getElementById("video2");
+		video.play();
+		function files() {
+			$(".gallery-content").hide();
+			$(".gallery-video").hide();
+			$(".gallery-files").show();
+			$(".photos").removeClass('gallery-header-color');
+			$(".videos").removeClass('gallery-header-color');
+			$(".files").addClass('gallery-header-color');
+		}
+
+		function photos() {
+			$(".gallery-files").hide();
+			$(".gallery-video").hide();
+			$(".gallery-content").show();
+			$(".videos").removeClass('gallery-header-color');
+			$(".files").removeClass('gallery-header-color');
+			$(".photos").addClass('gallery-header-color');
+		}
+
+		function playVideo(videoStatus) {
+			if (videoStatus == 1) {
+				var src = "../videos/titleAnim_lst.mp4";
+				$("#video").find("#videoSrc").attr("src", src);
+				$("#video")[0].load();
+				video.play();
+			} else {
+				console.log("insideElse" + videoStatus);
+				var src = "../videos/titleAnim_02.mp4";
+				$("#video").find("#videoSrc").attr("src", src);
+				$("#video")[0].load();
+				video.play();
+			}
+		}
+		function videos() {
+			video1.play();
+			video2.play();
+			setTimeout(function() {
+				video1.pause();
+				video2.pause();
+			}, 1000)
+			$(".gallery-files").hide();
+			$(".gallery-content").hide();
+			$(".gallery-video").show();
+			$(".photos").removeClass('gallery-header-color');
+			$(".files").removeClass('gallery-header-color');
+			$(".videos").addClass('gallery-header-color');
+		}
+	</script>
+	<div data-role="header" data-position="fixed" class="header-bg">
+		<div class="ui-grid-b">
+			<div class="ui-block-a back-btn" onclick="backHistroy('dashBoard')">
+				<img src="../images/keyboard-left-arrow-button.svg"
+					class="img-rotate">
+			</div>
+			<div class="ui-block-b bgm">Gallery</div>
+			<div class="ui-block-c menu">
+			</div>
+		</div>
+	</div>
+	<div data-role="content" class="content-overide no-padding">
+		<div class="emptyDivone"></div>
+		<div class="ui-grid-b gallery-header">
+			<div class="ui-block-a files" onclick="files()">Files</div>
+			<div class="ui-block-b photos" onclick="photos()">Photos</div>
+			<div class="ui-block-c videos" onclick="videos()">Videos</div>
+		</div>
+		<div class="ui-grid-solo gallery-files">
+			<div class="ui-block-a">
+				<div class="ui-grid-b gallery-file">
+					<div class="ui-block-a gallery-file1">BITSAA Anual Report
+						2008</div>
+					<div class="ui-block-b gallery-file2">
+						<img src="../images/read.svg" class="gallery-readimg">
+					</div>
+					<div class="ui-block-c gallery-file3">
+						<img src="../images/download.svg" class="gallery-downloadImg">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui-grid-solo gallery-content">
+			<div class="ui-block-a gallery-inerContent">
+				<div class="ui-grid-solo gallery-poster-img">
+					<div class="ui-block-a gallery-inerContent speakerDetailedImg">
+						<div class="gallery-info">content</div>
+					</div>
+				</div>
+				<div class="ui-grid-b gallery-subContents">
+					<div class="ui-block-a">
+						<img class="gallery-contents" src="../images/photo02.png">
+					</div>
+					<div class="ui-block-b">
+						<img class="gallery-contents" src="../images/photo02.png">
+					</div>
+					<div class="ui-block-c">
+						<img class="gallery-contents" src="../images/photo02.png">
+					</div>
+				</div>
+
+				<div class="ui-grid-b gallery-subContents">
+					<div class="ui-block-a">
+						<img class="gallery-contents" src="../images/photo02.png">
+					</div>
+					<div class="ui-block-b">
+						<img class="gallery-contents" src="../images/photo02.png">
+					</div>
+					<div class="ui-block-c">
+						<img class="gallery-contents" src="../images/photo02.png">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ui-grid-solo gallery-video">
+			<div class="ui-block-a gallery-video-content">
+				<div class="ui-grid-solo gallery-play-video">
+					<div class="ui-block-a gallery-video-play">
+						<video id="video" width="100%" height="100%" controls>
+							<source id="videoSrc" src="../videos/titleAnim_lst.mp4"
+								type="video/mp4">
+						</video>
+					</div>
+				</div>
+
+				<div class="ui-grid-a gallery-video-subcontents">
+					<div class="ui-block-a sub-videos" onclick="playVideo(1)">
+						<video id="video1" width="100%" height="100%">
+							<source src="../videos/titleAnim_lst.mp4" type="video/mp4">
+						</video>
+					</div>
+					<div class="ui-block-b sub-videos" onclick="playVideo(2)">
+						<video id="video2" width="100%" height="100%">
+							<source src="../videos/titleAnim_02.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed" class="footer-override"
+		style="text-align: center;">
+		<div class="ui-grid-c">
+			<div class="ui-block-a" onclick="footerClick('home')">
+				<img src="../images/home_btn.svg" class="footer-icons">
+			</div>
+			<div class="ui-block-b" onclick="footerClick('')">
+				<img src="../images/gallery_btn.svg" class="footer-icons">
+			</div>
+			<div class="ui-block-c" onclick="footerClick('loveUAE')">
+				<img src="../images/uae_btn.svg" class="footer-icons">
+			</div>
+			<div class="ui-block-d" onclick="footerClick('news')">
+				<img src="../images/addmore_btn.svg" class="footer-icons">
+			</div>
+		</div>
+	</div>
+</div>

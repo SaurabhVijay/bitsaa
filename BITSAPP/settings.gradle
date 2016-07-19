@@ -1,0 +1,5 @@
+// GENERATED FILE - DO NOT EDIT
+include ":"
+include ":CordovaLib"
+include ":..::..::..::Workspace_BITSAA::facebook"
+include ":..:..:..:..:..:android-sdk:extras:google:google_play_services:libproject:google-play-services_lib"

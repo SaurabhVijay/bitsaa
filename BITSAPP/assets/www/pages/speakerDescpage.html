@@ -1,0 +1,38 @@
+<div data-role="page">
+	<script type="text/javascript" src="../js/speakerDescPage.js"></script>
+	<div data-role="header" data-position="fixed" class="header-bg">
+		<div class="ui-grid-b">
+			<div class="ui-block-a back-btn"
+				onclick="backHistroy('speakerListingpage')">
+				<img src="../images/keyboard-left-arrow-button.svg"
+					class="img-rotate">
+			</div>
+			<div class="ui-block-b bgm">Speakers</div>
+			<div class="ui-block-c menu">
+			</div>
+		</div>
+	</div>
+	<div data-role="content" class="content-overide paddingOne">
+		<div class="emptyDivTwo"></div>
+		<div id="speakerImg" class="speakerDetailedImg"></div>
+		<h3 id="speakerName"></h3>
+		<div id="speakerDesc" class="wordBreak speaker-Desc-detail" style="padding-bottom: 6%;"></div>
+	</div>
+	<div data-role="footer" data-position="fixed" class="footer-override"
+		style="text-align: center;">
+		<div class="ui-grid-c">
+			<div class="ui-block-a" onclick="footerClick('home')">
+				<img src="../images/home_btn.svg" class="footer-icons">
+			</div>
+			<div class="ui-block-b" onclick="footerClick('gallery')">
+				<img src="../images/gallery_btn.svg" class="footer-icons">
+			</div>
+			<div class="ui-block-c" onclick="footerClick('loveUAE')">
+				<img src="../images/uae_btn.svg" class="footer-icons">
+			</div>
+			<div class="ui-block-d" onclick="footerClick('news')">
+				<img src="../images/addmore_btn.svg" class="footer-icons">
+			</div>
+		</div>
+	</div>
+</div>
